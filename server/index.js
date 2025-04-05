@@ -11,6 +11,9 @@ const io = socketio(server, { cors: { origin: '*' } });
 
 app.use(cors());
 app.use(express.json());
+app.get('/', (req, res) => {
+  res.send('🚀 Backend is running successfully!');
+});
 
 const userRoutes = require('./routes/user');
 app.use('/', userRoutes);
